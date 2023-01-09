@@ -1,3 +1,12 @@
+<?php
+$select = [
+    1 => "Facebook",
+    2 => "Youtube",
+    3 => "Twitter",
+    4 => "Autre"
+]
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +17,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -37,7 +47,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#">Acheter</a>
                         </li>
-                        
+
                     </ul>
                     <form class="d-flex" role="search">
                         <button class="btn" type="submit"></button>
@@ -51,55 +61,188 @@
     <main>
         <div class="container text-center">
             <div class="row justify-content-center ">
-                <form class="col-sm-6 rounded" action="resume.php" method="post">
+                <form class="col-sm-6 rounded" action="" method="post">
                     <h1 class="text-white mt-1">Créer votre compte</h1>
+                    <!-- input Pseudo -->
+                    <div>
+                        <label for="nom" class="text-danger">
+                            <?php
+                            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                                if (isset($_POST['pseudo'])) {
+                                    $pseudo = $_POST['pseudo'];
+                                    if (!preg_match('/^admin$/i', $pseudo) && preg_match('/^[a-zA-Z0-9_-]{3,16}$/', $pseudo)) {
+                                        echo '';
+                                    } else if (empty($pseudo)) {
+                                        echo '<i class="bi bi-exclamation-circle-fill"></i> Champs obligatoire';
+                                    } else {
+                                        echo '<i class="bi bi-x-circle-fill"></i> Format incorrect';
+                                    }
+                                }
+                            }
 
-                    <div>
-                        <input type="text" class="rounded btn btn-outline-light" placeholder="Nom" size="40px">
-                    </div>
-                    <div>
-                        <input type="text" class="rounded btn btn-outline-light" placeholder="Prénom" size="40px">
-                    </div>
-                    <div class="p-1">
-                        <input type="email" class="rounded btn btn-outline-light" placeholder="E-mail" size="40px">
-                    </div>
+                            ?>
+                        </label><br>
+                        <input type="text" class="rounded btn btn-outline-light" placeholder='Pseudo' size="40px" id="pseudo" name="pseudo">
 
+                    </div>
+                    <!-- input Nom -->
                     <div>
-                        <label for="password"><i class="bi bi-shield-check"></i> Mot de passe : </label><br>
-                        <input type="password" id="password" class="rounded btn btn-outline-danger" size="40px">
+                        <label for="nom" class="text-danger">
+                            <?php
+                            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                                if (isset($_POST['nom'])) {
+                                    $nom = $_POST['nom'];
+                                    if (preg_match('/^[a-zA-ZéèëËÊôöÔÖâäÄÂ\-\']{2,30}$/', $nom)) {
+                                        echo '';
+                                    } else if (empty($nom)) {
+                                        echo '<i class="bi bi-exclamation-circle-fill"></i> Champs obligatoire';
+                                    } else {
+                                        echo '<i class="bi bi-x-circle-fill"></i> Format incorrect';
+                                    }
+                                }
+                            }
+
+                            ?>
+                        </label><br>
+                        <input type="text" class="rounded btn btn-outline-light" placeholder="Nom" size="40px" id="nom" name="nom">
+
+                    </div>
+                    <!-- input Prénom -->
+                    <div>
+                        <label for="prenom" class="text-danger">
+                            <?php
+                            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                                if (isset($_POST['prenom'])) {
+                                    $prenom = $_POST['prenom'];
+                                    if (preg_match('/^[a-zA-ZéèëËÊôöÔÖâäÄÂ\-\']{2,30}$/', $prenom)) {
+                                        echo '';
+                                    } else if (empty($prenom)) {
+                                        echo '<i class="bi bi-exclamation-circle-fill"></i> Champs obligatoire';
+                                    } else {
+                                        echo '<i class="bi bi-x-circle-fill"></i> Format incorrect';
+                                    }
+                                }
+                            }
+
+                            ?>
+                        </label> <br>
+                        <input type="text" class="rounded btn btn-outline-light" placeholder="Prénom" size="40px" id="prenom" name="prenom">
+                    </div>
+                    <!-- input Date de naissance -->
+                    <div>
+                        <label for="date" class="text-danger">
+                            <?php
+                            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                                if (isset($_POST['date'])) {
+                                    $date = $_POST['date'];
+                                    if (preg_match('/^[0-3]?[0-9]\/[01]?[0-9]\/[12][0-9]{3}$/', $date)) {
+                                        echo '';
+                                    } else if (empty($date)) {
+                                        echo '<i class="bi bi-exclamation-circle-fill"></i> Champs obligatoire';
+                                    } else {
+                                        echo '<i class="bi bi-x-circle-fill"></i> Format incorrect';
+                                    }
+                                }
+                            }
+
+                            ?>
+                        </label> <br>
+                        <input type="text" class="rounded btn btn-outline-light" placeholder="Date de naissance : JJ/MM/AA" size="40px" id="date" name="date">
+                    </div>
+                    <!-- input E-mail -->
+                    <div>
+                        <label for="email" class="text-danger">
+                            <?php
+                            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                                if (isset($_POST['email'])) {
+                                    $email = $_POST['email'];
+                                    if (preg_match('/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/', $email)) {
+                                        echo '';
+                                    } else if (empty($email)) {
+                                        echo '<i class="bi bi-exclamation-circle-fill"></i> Champs obligatoire';
+                                    } else {
+                                        echo '<i class="bi bi-x-circle-fill"></i> Format incorrect';
+                                    }
+                                }
+                            }
+
+                            ?> </label> <br>
+                        <input type="text" class="rounded btn btn-outline-light" placeholder="E-mail" size="40px" name="email" id="email">
+                    </div>
+                    <!-- input Select -->
+                    <div>
+                        <label for="select">Comment avez vous connu le site ?
+                            <span class="text-danger">
+                                <?php
+                                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                                    if (isset($_POST['select'])) {
+                                        if (!empty($_POST['select'])) {
+                                            echo "";
+                                        } else {
+                                            echo "Aucune option n'a été sélectionnée.";
+                                        }
+                                    } else {
+                                        echo "Aucune option n'a été sélectionnée.";
+                                    }
+                                }
+
+                                ?>
+                            </span>
+                        </label> <br>
+                        <select name="select" id="select" class="rounded">
+                            <option value="default" selected disabled>Veuillez sélectionner une réponse</option>
+                            <?php
+                            foreach ($select as  $key => $options) {
+                                echo ' 
+                            <option value="' . $key . '">' . $options . '</option>
+                            ';
+                            } ?>
+                        </select>
+                    </div>
+                    <!-- inputs Password -->
+                    <div>
+                        <label for="password">Mot de passe :
+                            <span class="text-danger">
+                                <?php
+                                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                                    if (isset($_POST['password'])) {
+                                        $password = $_POST['password'];
+                                        if (preg_match('/^.{8,}$/', $password)) {
+                                            echo '';
+                                        } else if (empty($password)) {
+                                            echo '<i class="bi bi-exclamation-circle-fill"></i> Champs obligatoire';
+                                        } else {
+                                            echo '<i class="bi bi-x-circle-fill"></i> Format incorrect';
+                                        }
+                                    }
+                                }
+                                ?>
+                            </span>
+                        </label><br>
+                        <input type="password" id="password" name="password" class="rounded btn btn-outline-danger" size="40px">
                         <span id="message2"></span>
                     </div>
                     <div>
-                        <label for="confirm_password"> Confirmer le mot de passe : </label><br>
-                        <input type="password" id="confirm_password" class="rounded btn btn-outline-danger" size="40px">
+                        <label for="confirm_password"> Confirmer le mot de passe :
+                            <span class="text-danger">
+                                <?php
+                                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                                    
+                                }
+                                ?>
+                            </span>
+                        </label><br>
+                        <input type="password" id="confirm_password" name="confirm_password" class="rounded btn btn-outline-danger" size="40px">
                         <span id="message"></span>
                     </div>
-
-
-                    <div>
-                        <select name="CG" id="CG" class="rounded">
-                            <option value="default" selected disabled>Veuillez sélectionner une carte graphique</option>
-                            <option value="Radeon RX 7900 XTX"> Radeon RX 7900 XTX</option>
-                            <option value="Radeon RX 6950 XT"> Radeon RX 6950 XT</option>
-                            <option value="Radeon RX 7900 XT"> Radeon RX 7900 XT</option>
-                            <option value="Radeon RX 6900 XT"> Radeon RX 6900 XT</option>
-                            <option value="Radeon RX 6800 XT"> Radeon RX 6800 XT</option>
-                            <option value="Radeon RX 6850M XT"> Radeon RX 6850M XT</option>
-                            <option value="Radeon RX 6800"> Radeon RX 6800</option>
-                            <option value="Autre"> Autre</option>
-                        </select>
-                    </div>
-
+                    <!-- input CGU -->
                     <div>
                         <input type="radio" id="cgu">
                         <label for="cgu">Accepter les CGU</label>
                     </div>
-                    <div>
-                        <input type="radio" id="nl">
-                        <label for="nl">Recevoir la newsletter</label>
-                    </div>
 
-                    <button type="submit" value="envoyer" class="btn btn-outline-light">Valider</button>
+
+                    <button type="submit" class="btn btn-outline-light">Valider</button>
 
                 </form>
             </div>
@@ -107,10 +250,8 @@
     </main>
 
     <footer class="mt-3">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-        <div class="text-secondary text-center pt-1">
+
+        <div class="text-secondary text-center p-5">
             <a href="" class="text-secondary" disabled>Conditions générales</a>
             |
             <a href="" class="text-secondary">Confidentialité</a>
