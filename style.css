@@ -1,0 +1,75 @@
+@import url(//db.onlinewebfonts.com/c/3377e73e3430e9c3e97d811258fd2d59?family=Klavika+Medium+Condensed);
+
+body {
+    background-image: url(https://www.amd.com/system/files/2022-10/1678052-rdna-background-1920x600_0.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-color: black;
+}
+
+#background-video {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    }
+
+header {
+    background-color: black;
+   
+    margin-bottom: 1rem;
+}
+
+header img{
+ 
+ width: 104.59px;
+}
+
+nav.navbar.navbar-expand-lg {
+    padding-top: 26px;
+    padding-bottom: 26px;
+}
+
+div.container-fluid {
+padding-left: 63.234px;
+padding-right: 63.234px;
+}
+
+a.navbar-brand {
+    margin-right: 56px; 
+}
+.nav-item {
+    margin-right: 56px;
+}
+
+form {
+    
+    background-color: rgba(0, 0, 0, 0.696);
+    padding-bottom: 1rem;
+    font-family: "Klavika Medium Condensed";
+
+    
+}
+
+form div {
+    margin: 1rem;
+}
+
+
+label {
+    color: white;
+}
+
+footer {
+    background-color: black;
+    height: 100px;
+}
+
