@@ -54,7 +54,8 @@ form {
     
     background-color: rgba(0, 0, 0, 0.696);
     padding-bottom: 1rem;
-    font-family: "Klavika Medium Condensed";  
+    font-family: "Klavika Medium Condensed"; 
+   
 }
 
 form div {
@@ -69,10 +70,22 @@ label {
 footer {
     background-color: black;
     height: 100px;
-    margin-top: 2rem;
+    
 }
 
 .text-secondary {
     font-size: 11px;
 }
 
+.inscription {
+    background-color: rgba(0, 0, 0, 0.696);
+    padding: 5rem;
+    font-family: "Klavika Medium Condensed"; 
+
+    margin: 4rem !important;
+    height: 50vh;
+}
+
+main {
+    margin-bottom:7.5rem;
+}
