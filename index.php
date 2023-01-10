@@ -131,6 +131,7 @@ require('controller.php')
                         <h1>Merci <?= $pseudo ?> </h1>
                         <h2>Votre inscription a bien été prise en compte.</h2>
                         <p>Vous allez recevoir un mail de confirmation à l'adresse : <?= $email ?> </p>
+                        <div><img src="https://img.icons8.com/windows/115/ffffff/--checkmark-yes.png"/></div>
                     </div>
 
                 <?php }; ?>
