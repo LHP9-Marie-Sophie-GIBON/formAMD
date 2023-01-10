@@ -84,10 +84,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // vérification de l'input SELECT
+
     if (isset($_POST['select'])) {
+        $media = $_POST['select'];
         $error['select'] = '<i class="bi bi-check-circle"></i>';
     } else {
         $error['select'] = '<i class="bi bi-exclamation-circle-fill"></i> Champs obligatoire';
+        $totalerror++;
+    }
+
+    if (!array_key_exists($media, $select)){
+        $arrayErrors['medias'] = "Veuillez choisir une option";
+        $error['select'] = '<i class="bi bi-x-circle-fill"></i> Format incorrect';
         $totalerror++;
     }
 
