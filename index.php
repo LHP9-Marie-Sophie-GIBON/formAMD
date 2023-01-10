@@ -9,7 +9,8 @@ require('controller.php')
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AMD | Créer votre compte</title>
+    <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/amd-3215362-2673780.png" />
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
@@ -24,7 +25,7 @@ require('controller.php')
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="https://www.amd.com/content/dam/code/images/header/amd-header-logo.svg" alt=""></a>
+                <a class="navbar-brand" href="#"><img src="amd-header-logo.svg" alt=""></a>
             </div>
         </nav>
 
@@ -37,7 +38,7 @@ require('controller.php')
                 if ($showForm) { ?>
 
                     <form class="col-sm-6 rounded" action="" method="post">
-                        <h1 class="text-white mt-1">Créer votre compte</h1>
+                        <h1 class="text-white mt-2 fw-bold">Créer votre compte</h1>
                         <!-- input Pseudo -->
                         <div>
                             <label for="nom" class="text-danger">

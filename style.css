@@ -1,4 +1,4 @@
-@import url(//db.onlinewebfonts.com/c/3377e73e3430e9c3e97d811258fd2d59?family=Klavika+Medium+Condensed);
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed&family=Titillium+Web:wght@600&display=swap');
 
 body {
     background-image: url(https://www.amd.com/system/files/2022-10/1678052-rdna-background-1920x600_0.jpg);
@@ -20,17 +20,17 @@ body {
     top: 0;
     bottom: 0;
     z-index: -1;
-    }
+}
 
 header {
     background-color: black;
-   
+
     margin-bottom: 1rem;
 }
 
-header img{
- 
- width: 104.59px;
+header img {
+
+    width: 104.59px;
 }
 
 nav.navbar.navbar-expand-lg {
@@ -39,23 +39,24 @@ nav.navbar.navbar-expand-lg {
 }
 
 div.container-fluid {
-padding-left: 63.234px;
-padding-right: 63.234px;
+    padding-left: 63.234px;
+    padding-right: 63.234px;
 }
 
 a.navbar-brand {
-    margin-right: 56px; 
+    margin-right: 56px;
 }
+
 .nav-item {
     margin-right: 56px;
 }
 
 form {
-    
+
     background-color: rgba(0, 0, 0, 0.696);
     padding-bottom: 1rem;
-    font-family: "Klavika Medium Condensed"; 
-   
+    font-family: 'itillium Web', sans-serif;
+
 }
 
 form div {
@@ -70,7 +71,7 @@ label {
 footer {
     background-color: black;
     height: 100px;
-    
+
 }
 
 .text-secondary {
@@ -79,13 +80,24 @@ footer {
 
 .inscription {
     background-color: rgba(0, 0, 0, 0.696);
-    padding: 5rem;
-    font-family: "Klavika Medium Condensed"; 
+    padding: 1rem;
+    font-family: 'Titillium Web', sans-serif;
+    ;
+
 
     margin: 4rem !important;
     height: 50vh;
 }
 
 main {
-    margin-bottom:7.5rem;
+    margin-bottom: 7.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+    input {
+        width: 300px ;
+    }
+    form {
+        width: 350px !important;
+    }
 }
